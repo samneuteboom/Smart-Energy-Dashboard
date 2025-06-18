@@ -7,18 +7,25 @@
     <link rel="stylesheet" href="css/registreren.css">
 </head>
 <body>
-    <h1>Registratie</h1>
+ <div class="registratie-container">
+    <div class="registratie-header">Registratie</div>
     <form>
-        <label for="e-mail">E-mailadres</label><br>
-        <input type="text" name="e-mail" id="e-mail"><br>
-        <label for="Gebruikersnaam">Gebruikersnaam</label><br>
-        <input type="text" name="Gebruikersnaam" id="Gebruikersnaam"><br>
-        <label for="Wachtwoord">Wachtwoord</label><br>
-        <input type="text" name="Wachtwoord" id="Wachtwoord"><br>
-        <label for="WachtwoordHerhalen">Wachtwoord herhalen</label><br>
-        <input type="text" name="WachtwoordHerhalen" id="WachtwoordHerhalen"><br>
+      <label for="e-mail">E-mailadres</label>
+      <input type="text" name="e-mail" id="e-mail">
+
+      <label for="Gebruikersnaam">Gebruikersnaam</label>
+      <input type="text" name="Gebruikersnaam" id="Gebruikersnaam">
+
+      <label for="Wachtwoord">Wachtwoord</label>
+      <input type="password" name="Wachtwoord" id="Wachtwoord">
+
+      <label for="WachtwoordHerhalen">Wachtwoord herhalen</label>
+      <input type="password" name="WachtwoordHerhalen" id="WachtwoordHerhalen">
+
+      <p class="link">Heb je al een account? Klik <a href="login.html">hier</a></p>
+
+      <button type="submit" class="registratie-button"><a href="dashboard.html"></a>Registreren</button>
     </form>
-    <p>heb je al een account? klik <a href="login.html">Hier</a></p>
-    <button>registreren</button>
+  </div>
 </body>
 </html>
