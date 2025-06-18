@@ -1,0 +1,59 @@
+<?php
+include 'config.php'; // Verbind met database en start sessie
+include 'header.php'; // Toon navigatiebalk
+
+// Verwerk het inlogformulier als er gepost is
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username'] ?? ''); // Haal gebruikersnaam op
+    $password = $_POST['password'] ?? '';       // Haal wachtwoord op
+
+    if ($username === '' || $password === '') {
+        echo "<p>Vul alle velden in.</p>"; // Controleer of alle velden ingevuld zijn
+    } else {
+        // Zoek gebruiker op in database
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->execute([$username]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Controleer of gebruiker bestaat en wachtwoord klopt
+        if ($user && password_verify($password, $user['password'])) {
+            // Sla gebruikersdata op in sessie
+            $_SESSION['user'] = [
+                'id' => $user['id'],
+                'username' => $user['username'],
+                'role' => $user['role']
+            ];
+            header('Location: profile.php'); // Ga naar profielpagina
+            exit;
+        } else {
+            echo "<p>Ongeldige gebruikersnaam of wachtwoord.</p>";
+        }
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-header">Login</div>
+    <form>
+      <label for="gebruikersnaam">Gebruikersnaam</label>
+      <input type="text" id="gebruikersnaam" name="gebruikersnaam">
+
+      <label for="wachtwoord">Wachtwoord</label>
+      <input type="password" id="wachtwoord" name="wachtwoord">
+
+      <p class="link">heb je nog geen account? klik <a href="registreren.html">hier</a></p>
+
+      <button type="submit" class="login-button">inloggen</button>
+    </form>
+  </div>
+</body>
+</html>
