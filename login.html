@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <H1>login</H1>
+  <div class="login-container">
+    <div class="login-header">Login</div>
     <form>
-        <label for="Gebruikersnaam">Gebruikersnaam</label><br>
-        <input type="text" name="Gebruikersnaam" id="Gebruikersnaam"><br>
-        <label for="Wachtwoord">Wachtwoord</label><br>
-        <input type="text" name="Wachtwoord" id="Wachtwoord"><br>
+      <label for="gebruikersnaam">Gebruikersnaam</label>
+      <input type="text" id="gebruikersnaam" name="gebruikersnaam">
+
+      <label for="wachtwoord">Wachtwoord</label>
+      <input type="password" id="wachtwoord" name="wachtwoord">
+
+      <p class="link">heb je nog geen account? klik <a href="registreren.html">hier</a></p>
+
+      <button type="submit" class="login-button">inloggen</button>
     </form>
-    <p>heb je nog geen account? klik <a href="registreren.html">Hier</a></p>
-    <button>inloggen</button>
+  </div>
 </body>
 </html>
