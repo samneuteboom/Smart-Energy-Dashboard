@@ -1,0 +1,81 @@
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+.background .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4); /* optionele donkere overlay */
+    padding: 30px 20px;
+    border-radius: 12px;
+}
+.background .text a {
+    color: #fff;
+    text-decoration: underline;
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px 0 32px; /* bovenpadding naar 0 voor meer naar boven */
+    background: transparent;
+    position: relative;
+    box-sizing: border-box;
+    overflow: visible;
+    top: -16px; /* IETS NAAR BOVEN GEZET */
+    position: absolute; /* Zet navbar absoluut bovenaan */
+}
+
+.logo {
+    display: flex;
+    align-items: center; 
+    max-width: 100%;
+    overflow: visible;
+}
+
+.logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    max-width: 100%;
+}
+
+.profiel {
+    display: flex;
+    align-items: center; 
+}
+.profiel img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+    transition: box-shadow 0.2s;
+   
+}
+.profiel img:hover {
+    cursor: pointer;
+}
+
+body {
+    overflow-x: hidden;
+}
