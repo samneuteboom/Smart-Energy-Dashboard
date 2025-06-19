@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/homepage.css">
+    
 </head>
 <body>
 <navbar class="navbar">
  <div class="logo">
+ 
 <img src="images/Screenshot_2025-06-18_133819-removebg-preview.png">
  </div>
  <div class="profiel">
-<img src="images/p2.png"> 
+    <a href="dashboard.html">
+      <img src="images/p2.png" alt="Profiel">
+    </a>
 </div>
 
 </navbar>
@@ -24,5 +28,6 @@
             <p>Om te registreren klik <a href="registreren.html">hier</a>
         </div>
     </div>
+    
 </body>
 </html>
