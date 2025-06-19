@@ -32,28 +32,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <div class="login-container">
-    <div class="login-header">Login</div>
-    <form>
-      <label for="gebruikersnaam">Gebruikersnaam</label>
-      <input type="text" id="gebruikersnaam" name="gebruikersnaam">
+    <div class="login-container">
+        <div class="login-header">Login</div>
+        <form method="POST" action="">
+            <label for="username">Gebruikersnaam</label>
+            <input type="text" id="username" name="username" required>
 
-      <label for="wachtwoord">Wachtwoord</label>
-      <input type="password" id="wachtwoord" name="wachtwoord">
+            <label for="password">Wachtwoord</label>
+            <input type="password" id="password" name="password" required>
 
-      <p class="link">heb je nog geen account? klik <a href="registreren.html">hier</a></p>
+            <p class="link">Heb je nog geen account? Klik <a href="register.php">hier</a></p>
 
-      <button type="submit" class="login-button">inloggen</button>
-    </form>
-  </div>
+            <button type="submit" class="login-button">Inloggen</button>
+        </form>
+    </div>
 </body>
 </html>
