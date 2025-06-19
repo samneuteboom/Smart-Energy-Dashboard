@@ -1,3 +1,12 @@
+body {
+    margin: 0;
+    padding-top: 100px; /* afgestemd op de navbar hoogte */
+    background: #f5f5f5;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+}
+
+/* Achtergrond afbeelding als decoratie */
 .background {
     position: fixed;
     top: 0;
@@ -22,127 +31,89 @@
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    background: rgba(0, 0, 0, 0.4); /* optionele donkere overlay */
+    background: rgba(0, 0, 0, 0.4);
     padding: 30px 20px;
     border-radius: 12px;
 }
+
 .background .text a {
     color: #fff;
     text-decoration: underline;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1e1e2f;
-  padding: 10px 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.logo img {
-    height: 50px;
-    width: auto;
-    height: 72px;
-    width: auto;
-    display: block;
-    transition: height 0.3s;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #00bcd4;
-}
-
-.profile-link img {
-  height: 40px;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.profile-link img:hover {
-  transform: scale(1.1);
-}
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 72px;
+    width: 100%;
+    height: 100px; /* Hoger vanwege groter logo */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
     box-sizing: border-box;
-    z-index: 100;
-    background: rgba(255,255,255,0.4);
-    backdrop-filter: blur(32px);
-    -webkit-backdrop-filter: blur(50px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+   background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    border: radius 12px;
+    z-index: 1000;
+    
 }
 
+/* Linker navigatie */
+.nav-links {
+    flex: 1;
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Midden logo */
 .logo {
     flex: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
     min-width: 0;
 }
 
 .logo img {
-    height: 48px;
+    height: 100px;
     width: auto;
     display: block;
+    transition: height 0.3s ease;
 }
 
-.nav-links {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    min-width: 0;
-}
-
-.nav-links a {
-    color: #2e7d32;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.2s;
-    white-space: nowrap;
-}
-
-.nav-links a:hover {
-    color: #1b5e20;
-    text-decoration: underline;
-}
-
+/* Rechter profiel en winkelwagen */
 .profiel {
     flex: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    min-width: 0;
+    gap: 24px;
 }
 
 .profiel img {
-    width: 44px;
-    height: 44px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
-    transition: box-shadow 0.2s;
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-body {
-    margin: 0;
-    padding-top: 72px;
-    background: #f5f5f5;
+.profiel img:hover {
+    transform: scale(1.1);
 }

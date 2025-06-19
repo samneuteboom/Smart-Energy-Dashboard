@@ -1,6 +1,6 @@
 <?php
 include 'config.php'; // Verbind met database en start sessie
-include 'header.php'; // Toon navigatiebalk
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,26 +13,38 @@ include 'header.php'; // Toon navigatiebalk
 </head>
 <body>
 <nav class="navbar">
-    <div class="logo">
-        <img src="images/Screenshot_2025-06-18_133819-removebg-preview.png" alt="Logo">
-    </div>
     <div class="nav-links">
         <a href="index.php">Home</a>
         <a href="login.php">Inloggen</a>
         <a href="register.php">Registreren</a>
     </div>
+    
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
     <div class="profiel">
         <a href="profile.php">
             <img src="images/p2.png" alt="Profiel">
         </a>
+        
     </div>
 </nav>
+
     <div class="background">
         <img src="images/green energie.webp" style="display: block; width: 100%;">
         <div class="text">
-            <h1>Welkom Gebruiker</h1>
-            <p>Om in te loggen klik <a href="login.html">hier</a>
-            <p>Om te registreren klik <a href="registreren.html">hier</a>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                 Vivamus lacinia odio vitae vestibulum vestibulum.
+                  Cras venenatis euismod malesuada. Sed euismod, 
+                  nisl at convallis placerat, 
+                  justo purus fermentum massa,
+                  non tincidunt arcu elit a nisi. 
+                  Nulla facilisi. Maecenas pretium,
+                   lorem at cursus feugiat, metus sem facilisis mauris,
+                    in suscipit orci lorem ut nisl. 
+                    Integer in erat ac augue tincidunt fermentum. Curabitur vel pulvinar elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+<p>
         </div>
     </div>
     
