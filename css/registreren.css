@@ -1,75 +1,65 @@
-    * {
-      box-sizing: border-box;
-    }
 
-    body {
-      margin: 0;
-      background-color: #434040;
-      font-family: 'Krona One', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .registratie-container {
-      background-color: #CECBCB;
-      width: 400px;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-
-    .registratie-header {
-      background-color: #20712c;
-      color: white;
-      padding: 20px 0;
-      font-size: 24px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      padding: 30px;
-      color: #00B100;
-    }
-
-    label {
-      margin-bottom: 5px;
-      text-align: left;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      padding: 10px;
-      margin-bottom: 20px;
-      border: none;
-      background-color: #E5E5E5;
-      font-size: 14px;
-    }
-
-    .link {
-      font-size: 12px;
-      margin-bottom: 20px;
-    }
-
-    .link a {
-      color: #0066ff;
-      text-decoration: none;
-    }
-
-    .registratie-button {
-      background-color: #20712c;
-      color: white;
-      border: none;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .registratie-button:hover {
-      background-color: #1a5e25;
-    }
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #434040;
+  font-family: 'Krona One', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-container {
+  background-color: #CECBCB;
+  width: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  text-align: center;
+}
+.login-header {
+  background-color: #20712c;
+  color: white;
+  padding: 20px 0;
+  font-size: 24px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  color: #00B100;
+}
+label {
+  margin-bottom: 5px;
+  text-align: left;
+}
+input[type="text"], input[type="password"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #E5E5E5;
+  font-size: 14px;
+}
+.link {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.link a {
+  color: #0066ff;
+  text-decoration: none;
+}
+.login-button {
+  background-color: #20712c;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.login-button:hover {
+  background-color: #1a5e25;
+}
