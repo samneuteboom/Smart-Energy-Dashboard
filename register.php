@@ -32,27 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/registreren.css">
-</head>
-<body>
-    <h1>Registratie</h1>
-    <form>
-        <label for="e-mail">E-mailadres</label><br>
-        <input type="text" name="e-mail" id="e-mail"><br>
-        <label for="Gebruikersnaam">Gebruikersnaam</label><br>
-        <input type="text" name="Gebruikersnaam" id="Gebruikersnaam"><br>
-        <label for="Wachtwoord">Wachtwoord</label><br>
-        <input type="text" name="Wachtwoord" id="Wachtwoord"><br>
-        <label for="WachtwoordHerhalen">Wachtwoord herhalen</label><br>
-        <input type="text" name="WachtwoordHerhalen" id="WachtwoordHerhalen"><br>
-    </form>
-    <p>heb je al een account? klik <a href="login.html">Hier</a></p>
+<h2>Registreren</h2>
+<!-- Registratie formulier -->
+<form method="POST">
+    Gebruikersnaam:<br>
+    <input type="text" name="username"><br>
+    Wachtwoord:<br>
+    <input type="password" name="password"><br><br>
     <button type="submit">Registreren</button>
-</body>
-</html>
+</form>
