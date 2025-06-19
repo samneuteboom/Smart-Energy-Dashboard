@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label>Password:</label><input type="password" name="password" required>
         <label>Confirm Password:</label><input type="password" name="confirm" required>
         <button class="login-button" type="submit">Register</button>
-        <p class="link"><a href="login.php">Login</a></p>
+<p class="link">Heb je al een account? <a href="login.php">Klik hier</a></p>
     </form>
     <p><?= $message ?></p>
 </div>

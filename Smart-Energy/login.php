@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label>Username:</label><input type="text" name="username" required>
         <label>Password:</label><input type="password" name="password" required>
         <button class="login-button" type="submit">Login</button>
-        <p class="link"><a href="register.php">Register</a></p>
+<p class="link">Heb je nog geen account? <a href="register.php">Klik hier</a></p>
+
     </form>
     <p><?= $message ?></p>
 </div>
