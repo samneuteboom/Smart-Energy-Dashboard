@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="style_register.css"></head>
+<head><link rel="stylesheet" href="register.css"></head>
 <body>
 <div class="login-container">
     <div class="login-header">Register</div>
