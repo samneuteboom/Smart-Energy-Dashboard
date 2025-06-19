@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="login.css"></head>
+<head><link rel="stylesheet" href="css/login.css"></head>
 <body>
 <div class="login-container">
     <div class="login-header">Login</div>
