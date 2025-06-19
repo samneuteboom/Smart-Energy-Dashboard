@@ -1,3 +1,7 @@
+<?php
+include 'config.php'; // Verbind met database en start sessie
+include 'header.php'; // Toon navigatiebalk
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +30,3 @@
     </div>
 </body>
 </html>
-<?php
-include 'config.php'; // Verbind met database en start sessie
-include 'header.php'; // Toon navigatiebalk
-?>
-
-<
