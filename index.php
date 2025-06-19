@@ -12,18 +12,21 @@ include 'header.php'; // Toon navigatiebalk
     
 </head>
 <body>
-<navbar class="navbar">
- <div class="logo">
- 
-<img src="images/Screenshot_2025-06-18_133819-removebg-preview.png">
- </div>
- <div class="profiel">
-    <a href="dashboard.html">
-      <img src="images/p2.png" alt="Profiel">
-    </a>
-</div>
-
-</navbar>
+<nav class="navbar">
+    <div class="logo">
+        <img src="images/Screenshot_2025-06-18_133819-removebg-preview.png" alt="Logo">
+    </div>
+    <div class="nav-links">
+        <a href="index.php">Home</a>
+        <a href="login.php">Inloggen</a>
+        <a href="register.php">Registreren</a>
+    </div>
+    <div class="profiel">
+        <a href="profile.php">
+            <img src="images/p2.png" alt="Profiel">
+        </a>
+    </div>
+</nav>
     <div class="background">
         <img src="images/green energie.webp" style="display: block; width: 100%;">
         <div class="text">
