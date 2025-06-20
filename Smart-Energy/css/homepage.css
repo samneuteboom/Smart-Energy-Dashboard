@@ -1,0 +1,22 @@
+
+body {
+  background-color: #434040;
+  color: white;
+  font-family: 'Krona One', sans-serif;
+  text-align: center;
+}
+nav {
+  background-color: #20712c;
+  padding: 10px;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+h1 {
+  margin-top: 50px;
+}
