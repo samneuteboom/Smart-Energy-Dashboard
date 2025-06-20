@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['username'] = $username;
         header('Location: dashboard.php');
     } else {
-        $message = 'Incorrect credentials';
+        $message = 'login gegevens zijn incorect';
     }
 }
 ?>

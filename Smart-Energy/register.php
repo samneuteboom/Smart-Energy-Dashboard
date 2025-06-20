@@ -14,6 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
         if ($stmt->execute([$email, $username, $hash])) {
             $message = 'Registration successful!';
+            header("Location: login.php");
+            exit();
         } else {
             $message = 'Registration failed.';
         }
