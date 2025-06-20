@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 ?>
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="css/home.css"></head>
+<head><link rel="stylesheet" href="css/homepage.css"></head>
 <body>
 <nav>
     <a href="index.php">Home</a>
