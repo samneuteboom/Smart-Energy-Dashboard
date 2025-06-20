@@ -1,13 +1,65 @@
-
 body {
-  background-color: #434040;
-  color: white;
-  font-family: 'Krona One', sans-serif;
-  text-align: center;
+    margin: 0;
+    padding-top: 100px; /* afgestemd op de navbar hoogte */
+    background: #f5f5f5;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
 }
-nav {
-  background-color: #20712c;
-  padding: 10px;
+
+/* Achtergrond afbeelding als decoratie */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+.background .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px 20px;
+    border-radius: 12px;
+}
+
+.background .text a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Hoger vanwege groter logo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    box-sizing: border-box;
+   background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    border: radius 12px;
+    z-index: 1000;
+    
 }
 
 /* Linker navigatie */
@@ -16,9 +68,52 @@ nav {
     display: flex;
     gap: 32px;
 }
-nav a:hover {
-  text-decoration: underline;
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
 }
-h1 {
-  margin-top: 50px;
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Midden logo */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+    transition: height 0.3s ease;
+}
+
+/* Rechter profiel en winkelwagen */
+.profiel {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+}
+
+.profiel img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.profiel img:hover {
+    transform: scale(1.1);
 }
