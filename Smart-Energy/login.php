@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['username'] = $username;
-        header('Location: index.php');
+        header('Location: dashboard.php');
     } else {
         $message = 'Incorrect credentials';
     }
