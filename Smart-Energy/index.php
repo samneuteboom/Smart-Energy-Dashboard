@@ -33,16 +33,7 @@ include 'config.php'; // Verbind met database en start sessie
     <div class="background">
         <img src="images/green energie.webp" style="display: block; width: 100%;">
         <div class="text">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Vivamus lacinia odio vitae vestibulum vestibulum.
-                  Cras venenatis euismod malesuada. Sed euismod, 
-                  nisl at convallis placerat, 
-                  justo purus fermentum massa,
-                  non tincidunt arcu elit a nisi. 
-                  Nulla facilisi. Maecenas pretium,
-                   lorem at cursus feugiat, metus sem facilisis mauris,
-                    in suscipit orci lorem ut nisl. 
-                    Integer in erat ac augue tincidunt fermentum. Curabitur vel pulvinar elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            <p>
 <p>
         </div>
     </div>
