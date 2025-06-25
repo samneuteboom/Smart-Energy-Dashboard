@@ -179,6 +179,17 @@ body {
   max-width: 100px;   /* Verkleind naar gewenste grootte */
   height: auto;
 }
+.error-message {
+            color: #dc3545; /* Rood voor foutmeldingen */
+            text-align: center;
+            margin: 1rem 0;
+            padding: 0.5rem;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
 /* Responsive aanpassingen */
 @media (max-width: 480px) {
