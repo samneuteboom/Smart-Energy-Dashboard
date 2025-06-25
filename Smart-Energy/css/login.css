@@ -1,65 +1,197 @@
-
-* {
-  box-sizing: border-box;
+:root {
+  --primary: #20712c;
+  --primary-light: #2e8b57;
+  --accent: #00B100;
+  --text: #333333;
+  --text-light: #6c757d;
+  --border: #e0e0e0;
+  --background: #f8f9fa;
+  --container-width: 380px;
 }
+
 body {
-  margin: 0;
-  background-color: #434040;
-  font-family: 'Krona One', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 1rem;
 }
+
 .login-container {
-  background-color: #CECBCB;
-  width: 400px;
-  border-radius: 5px;
+  width: 100%;
+  max-width: 380px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  text-align: center;
+  margin: 0 auto;
 }
+
 .login-header {
-  background-color: #20712c;
-  color: white;
-  padding: 20px 0;
-  font-size: 24px;
+  padding: 1.8rem 1.5rem 1.2rem;
+  text-align: center;
+  background: white;
 }
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  color: #00B100;
+
+.login-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
 }
-label {
-  margin-bottom: 5px;
-  text-align: left;
+
+.login-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
-input[type="text"], input[type="password"] {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: none;
-  background-color: #E5E5E5;
-  font-size: 14px;
+
+.form-container {
+  padding: 0 2rem 2rem;
+  margin-right: 0; /* THE FIX - removes any right margin */
+  box-sizing: border-box; /* Ensures padding stays within width */
 }
-.link {
-  font-size: 12px;
-  margin-bottom: 20px;
+
+.input-group {
+  margin-bottom: 1.5rem;
+  position: relative;
 }
-.link a {
-  color: #0066ff;
-  text-decoration: none;
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
 }
-.login-button {
-  background-color: #20712c;
-  color: white;
-  border: none;
-  padding: 12px;
-  font-size: 16px;
+
+.input-field {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
 }
+
+.input-field:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(32, 113, 44, 0.2);
+  outline: none;
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  margin: -0.75rem 0 1.25rem;
+  font-size: 0.85rem;
+}
+
+.forgot-password a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.75rem 0;
+  position: relative;
+}
+
+.divider-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.9375rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.25rem;
+}
+
 .login-button:hover {
-  background-color: #1a5e25;
+  background: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 1.75rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.footer-text a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 16px auto;
+  max-width: 100px;
+  height: auto;
+}
+
+/* Responsive aanpassingen */
+@media (max-width: 480px) {
+  .login-container {
+    max-width: 100%;
+    margin: 0 1rem;
+  }
+  
+  .form-container {
+    padding: 0 1.5rem 1.5rem;
+    margin-right: 0; /* Maintains the fix on mobile */
+  }
+  
+  .login-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+}
+.logo {
+  display: block;
+  margin: 0 auto 16px auto;
+  max-width: 100px;   /* Verkleind naar gewenste grootte */
+  height: auto;
+}
+
+/* Responsive aanpassingen */
+@media (max-width: 480px) {
+  .login-container {
+    max-width: 100%;
+    margin: 0 1rem;
+  }
+  
+  .form-container {
+    padding: 0 1.5rem 1.5rem;
+  }
+  
+  .login-header {
+    padding: 1.5rem 1rem 1rem;
+  }
 }

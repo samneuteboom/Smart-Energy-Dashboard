@@ -42,41 +42,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <!-- CSS stylesheet voor registratiepagina -->
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" type="text/css" href="./css/register.css">
 </head>
 <body>
     <!-- Registratie formulier container -->
     <div class="login-container">
-        <!-- Titel van het formulier -->
-        <div class="login-header">Register</div>
+    <a href="index.php">
+        <img src="images/logo.png" alt="Logo" class="logo">
+    </a>
+    
+    <div class="login-header">
+        <div class="login-title">Register</div>
+        <div class="login-subtitle">a a n m e l d e n</div>
+    </div>
+    
+    <form method="POST" class="form-container">
+        <div class="input-group">
+            <label class="input-label">Email:</label>
+            <input type="text" name="email" class="input-field" required>
+        </div>
         
-        <!-- Registratie formulier -->
-        <form method="POST">
-            <!-- Email invoerveld -->
-            <label>Email:</label>
-            <input type="text" name="email" required>
-            
-            <!-- Gebruikersnaam invoerveld -->
-            <label>Username:</label>
-            <input type="text" name="username" required>
-            
-            <!-- Wachtwoord invoerveld -->
-            <label>Password:</label>
-            <input type="password" name="password" required>
-            
-            <!-- Wachtwoord bevestiging invoerveld -->
-            <label>Confirm Password:</label>
-            <input type="password" name="confirm" required>
-            
-            <!-- Registratie knop -->
-            <button class="login-button" type="submit">Register</button>
-            
-            <!-- Link naar login pagina voor bestaande gebruikers -->
-            <p class="link">Heb je al een account? <a href="login.php">Klik hier</a></p>
-        </form>
+        <div class="input-group">
+            <label class="input-label">Username:</label>
+            <input type="text" name="username" class="input-field" required>
+        </div>
         
+        <div class="input-group">
+            <label class="input-label">Password:</label>
+            <input type="password" name="password" class="input-field" required>
+        </div>
+        
+        <div class="input-group">
+            <label class="input-label">Confirm Password:</label>
+            <input type="password" name="confirm" class="input-field" required>
+        </div>
+        
+        <button class="login-button" type="submit">Register</button>
+        
+        <p class="footer-text">Heb je al een account? <a href="login.php">Login hier</a></p>
+    </form>
+</div>
         <!-- Toon eventuele berichten (foutmeldingen/success) -->
         <p><?= htmlspecialchars($message) ?></p>
     </div>
+    
 </body>
 </html>

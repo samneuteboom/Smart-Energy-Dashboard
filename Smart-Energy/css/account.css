@@ -1,0 +1,59 @@
+:root {
+  --primary: #20712c;       /* Behoud origineel groen */
+  --primary-light: #2e8b57; /* Lichtere groen */
+  --accent: #00B100;        /* Helder accentgroen */
+  --text: #333333;          /* Donkergrijs voor tekst */
+  --text-light: #6c757d;    /* Lichtgrijs voor subtiele tekst */
+  --border: #e0e0e0;        /* Lichte grijze borders */
+  --background: #f8f9fa;    /* Zeer lichtgrijze achtergrond */
+  --input-bg: #E5E5E5;      /* Lichtgrijze input achtergrond */
+  --link: #0066ff;          /* Blauw voor links */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Subtiele schaduw */
+}
+
+/* Rest van de CSS blijft exact hetzelfde */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 1rem;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 380px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.login-header {
+  padding: 1.8rem 1.5rem 1.2rem;
+  text-align: center;
+  background: var(--primary); /* Nu met themakleur */
+  color: white;
+}
+
+/* ... (alle overige CSS blijft exact hetzelfde) ... */
+
+.login-button {
+  background: var(--primary); /* Themagroen */
+  color: white;
+  /* ... (rest blijft hetzelfde) ... */
+}
+
+.login-button:hover {
+  background: var(--primary-light); /* Lichter themagroen */
+  /* ... (rest blijft hetzelfde) ... */
+}
+
+/* Responsive aanpassingen blijven identiek */
+@media (max-width: 480px) {
+  /* ... (bestaande responsive code) ... */
+}

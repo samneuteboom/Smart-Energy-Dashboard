@@ -1,70 +1,79 @@
 <?php
-// Database configuratie bestand inladen
 require 'db.php';
 
-// Sessie starten om gebruikersgegevens te kunnen onthouden
-session_start();
+// Verbeterde sessie-start
+if (session_status() === PHP_SESSION_NONE) {
+    session_start([
+        'cookie_lifetime' => 86400, // 24 uur
+        'cookie_secure' => isset($_SERVER['HTTPS']), // Beveiliging voor HTTPS
+        'cookie_httponly' => true, // Beveiliging tegen XSS
+        'cookie_samesite' => 'Lax' // Beveiliging tegen CSRF
+    ]);
+}
 
-// Variabele voor berichten naar de gebruiker
 $message = '';
 
-// Controleer of het formulier is verzonden (POST request)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Haal de ingevoerde gebruikersnaam en wachtwoord op=
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Bereid een SQL query voor om de gebruiker op te halen
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    // Voer de query uit met de ingevoerde gebruikersnaam
     $stmt->execute([$username]);
-    // Haal het resultaat op (gebruikersgegevens)
     $user = $stmt->fetch();
 
-    // Controleer of de gebruiker bestaat EN of het wachtwoord klopt
     if ($user && password_verify($password, $user['password'])) {
-        // Sla de gebruikersnaam op in de sessie
+        // BELANGRIJK: Sla zowel ID als username op
+        $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $username;
-        // Stuur door naar het dashboard bij succesvolle login
-        header('Location: dashboard.php');
+        
+        // Regenereren sessie-ID voor beveiliging
+        session_regenerate_id(true);
+        
+        // Doorsturen naar waar de gebruiker vandaan kwam of dashboard
+        header('Location: ' . ($_SESSION['return_url'] ?? 'dashboard.php'));
         exit();
     } else {
-        // Toon foutmelding bij onjuiste inloggegevens
         $message = 'Login gegevens zijn incorrect';
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- CSS stylesheet voor de loginpagina -->
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <!-- Login formulier container -->
     <div class="login-container">
-        <!-- Titel van het formulier -->
-        <div class="login-header">Login</div>
-        
-        <!-- Login formulier -->
-        <form method="POST">
-            <!-- Gebruikersnaam invoerveld -->
-            <label>Username:</label>
-            <input type="text" name="username" required>
-            
-            <!-- Wachtwoord invoerveld -->
-            <label>Password:</label>
-            <input type="password" name="password" required>
-            
-            <!-- Login knop -->
-            <button class="login-button" type="submit">Login</button>
-            
-            <!-- Link naar registratiepagina voor nieuwe gebruikers -->
-            <p class="link">Heb je nog geen account? <a href="register.php">Klik hier</a></p>
-        </form>
-        
-        <!-- Toon eventuele foutmeldingen -->
+  <div class="login-header">
+    <h1 class="login-title"> 
+        <img src="images/logo.png" alt="Logo" class="logo">
+    
+  </div>
+  
+  <div class="form-container">
+    <form method="POST" action="">
+      <div class="input-group">
+        <label class="input-label">Gebruikersnaam</label>
+        <input type="text" name="username" class="input-field" placeholder="Voer uw gebruikersnaam" required>
+      </div>
+      
+      <div class="input-group">
+        <label class="input-label">Wachtwoord</label>
+        <input type="password" name="password" class="input-field" placeholder="Voer uw wachtwoord in" required>
+      </div>
+      
+      <button type="submit" class="login-button">Inloggen</button>
+    </form>
+    
+    <div class="divider">
+      <span class="divider-text">OF</span>
+    </div>
+    
+    <p class="footer-text">
+      Heb je geen account? <a href="register.php">Registreer nu</a>
+    </p>
+  </div>
+</div>
         <p><?= htmlspecialchars($message) ?></p>
     </div>
 </body>

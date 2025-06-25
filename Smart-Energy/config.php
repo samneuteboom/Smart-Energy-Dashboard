@@ -1,5 +1,7 @@
 <?php
-session_start(); // Start of herstart de sessie zodat je gebruikersgegevens kunt opslaan
+if (session_status() === PHP_SESSION_NONE) {
+    session_start(); // Start of herstart de sessie zodat je gebruikersgegevens kunt opslaan
+}
 
 // Database configuratie
 $host = "localhost";
