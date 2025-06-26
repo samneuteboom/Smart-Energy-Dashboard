@@ -42,7 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <!-- CSS stylesheet voor registratiepagina -->
-    <link rel="stylesheet" type="text/css" href="./css/register.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <!-- Registratie formulier container -->

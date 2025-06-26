@@ -119,13 +119,7 @@ body {
 }
 /* HAMBURGER MENU */
 /* SMART ENERGIE THEMA HAMBURGER MENU */
-:root {
-  --energie-groen: #00C853;       /* Fris energiegroen */
-  --smart-blauw: #0091EA;         /* Helder smart blauw */
-  --zon-geel: #FFD600;            /* Zonne-energie geel */
-  --team-oranje: #FF6D00;         /* Team accentkleur */
-  --donker-blauw: #0D47A1;        /* Diepe energieblauw */
-}
+
 
 /* HAMBURGER ICON */
 .ham-menu {

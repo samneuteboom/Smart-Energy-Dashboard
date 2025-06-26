@@ -1,59 +1,162 @@
-:root {
-  --primary: #20712c;       /* Behoud origineel groen */
-  --primary-light: #2e8b57; /* Lichtere groen */
-  --accent: #00B100;        /* Helder accentgroen */
-  --text: #333333;          /* Donkergrijs voor tekst */
-  --text-light: #6c757d;    /* Lichtgrijs voor subtiele tekst */
-  --border: #e0e0e0;        /* Lichte grijze borders */
-  --background: #f8f9fa;    /* Zeer lichtgrijze achtergrond */
-  --input-bg: #E5E5E5;      /* Lichtgrijze input achtergrond */
-  --link: #0066ff;          /* Blauw voor links */
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Subtiele schaduw */
+/* Main content styles */
+.account-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Rest van de CSS blijft exact hetzelfde */
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f5f7fa;
-  margin: 0;
-  padding: 1rem;
+.account-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
 }
 
-.login-container {
-  width: 100%;
-  max-width: 380px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  margin: 0 auto;
+.account-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #20712c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-right: 1.5rem;
 }
 
-.login-header {
-  padding: 1.8rem 1.5rem 1.2rem;
-  text-align: center;
-  background: var(--primary); /* Nu met themakleur */
-  color: white;
+.account-title {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #333;
 }
 
-/* ... (alle overige CSS blijft exact hetzelfde) ... */
-
-.login-button {
-  background: var(--primary); /* Themagroen */
-  color: white;
-  /* ... (rest blijft hetzelfde) ... */
+.account-subtitle {
+    color: #6c757d;
+    margin: 0.3rem 0 0;
+    font-weight: normal;
 }
 
-.login-button:hover {
-  background: var(--primary-light); /* Lichter themagroen */
-  /* ... (rest blijft hetzelfde) ... */
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
-/* Responsive aanpassingen blijven identiek */
-@media (max-width: 480px) {
-  /* ... (bestaande responsive code) ... */
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-control:focus {
+    border-color: #4361ee;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.btn {
+    background: #00B100;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background:  #20712c;
+}
+
+.alert {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.alert-error {
+    background: #ffebee;
+    color: #f72585;
+    border-left: 4px solid #f72585;
+}
+
+.alert-success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #2e7d32;
+}
+
+.alert i {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.password-strength {
+    margin-top: 0.5rem;
+    height: 5px;
+    background: #eee;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.strength-meter {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s, background 0.3s;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .account-container {
+        max-width: 100%;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .account-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 0.5rem;
+    }
+    .account-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    .account-title {
+        font-size: 1.3rem;
+    }
+    .form-control {
+        font-size: 0.95rem;
+        padding: 0.6rem;
+    }
+    .btn {
+        width: 100%;
+        padding: 0.7rem 0;
+        font-size: 1rem;
+    }
+    .alert {
+        font-size: 0.95rem;
+        padding: 0.7rem;
+    }
 }
