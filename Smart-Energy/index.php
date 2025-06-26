@@ -38,6 +38,7 @@ session_start();
         <span></span>
       </div>
     </nav>
+    <div id="menuOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:99;display:none;background:rgba(0,0,0,0.5);"></div>
 </body>
 
 
@@ -48,25 +49,27 @@ session_start();
 <p>
         </div>
     </div>
-    <script> 
+<script> 
 document.addEventListener('DOMContentLoaded', function() {
     const hamMenu = document.querySelector(".ham-menu");
     const offScreenMenu = document.querySelector(".off-screen-menu");
     const menuOverlay = document.getElementById("menuOverlay");
     const body = document.body;
 
-    // Toggle menu
-    const toggleMenu = () => {
+    // Toggle menu function
+    function toggleMenu() {
         hamMenu.classList.toggle("active");
         offScreenMenu.classList.toggle("active");
         menuOverlay.classList.toggle("active");
-        
-        if(offScreenMenu.classList.contains('active')) {
+        // Show/hide overlay
+        if (offScreenMenu.classList.contains('active')) {
+            menuOverlay.style.display = 'block';
             body.style.overflow = 'hidden';
         } else {
+            menuOverlay.style.display = 'none';
             body.style.overflow = '';
         }
-    };
+    }
 
     hamMenu.addEventListener("click", function(e) {
         e.stopPropagation();
