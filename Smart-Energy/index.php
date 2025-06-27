@@ -1,5 +1,4 @@
 <?php
-
 include 'config.php'; // Verbind met database en start sessie
 session_start();
 ?>
@@ -8,10 +7,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Smart Energie</title>
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
-    
 </head>
 <body>
 <nav class="navbar">
@@ -25,9 +23,6 @@ session_start();
         <li><a href="index.php">Home</a></li>
           <li><a href="login.php">Login</a></li>
         <li><a href="register.php">Register</a></li>
-    
-    
- 
       </ul>
     </div>
 
@@ -38,56 +33,59 @@ session_start();
         <span></span>
       </div>
     </nav>
-</body>
-
 
     <div class="background">
         <img src="images/green energie.webp" style="display: block; width: 100%;">
-        <div class="text">
-            <p>
-<p>
+        <div class="hero-content">
+            <h1>Ontdek Smart Energie</h1>
+            <p>Bespaar op uw energiekosten en draag bij aan een groenere toekomst met ons innovatieve energiebeheersysteem.</p>
+            <a href="register.php" class="register-btn">Registreer Nu Smart Energie</a>
         </div>
     </div>
+
+    <!-- Add the missing menu overlay element -->
+    <div id="menuOverlay" class="menu-overlay"></div>
+    
     <script> 
-document.addEventListener('DOMContentLoaded', function() {
-    const hamMenu = document.querySelector(".ham-menu");
-    const offScreenMenu = document.querySelector(".off-screen-menu");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const body = document.body;
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamMenu = document.querySelector(".ham-menu");
+        const offScreenMenu = document.querySelector(".off-screen-menu");
+        const menuOverlay = document.getElementById("menuOverlay");
+        const body = document.body;
 
-    // Toggle menu
-    const toggleMenu = () => {
-        hamMenu.classList.toggle("active");
-        offScreenMenu.classList.toggle("active");
-        menuOverlay.classList.toggle("active");
-        
-        if(offScreenMenu.classList.contains('active')) {
-            body.style.overflow = 'hidden';
-        } else {
-            body.style.overflow = '';
-        }
-    };
-
-    hamMenu.addEventListener("click", function(e) {
-        e.stopPropagation();
-        toggleMenu();
-    });
-
-    // Sluit menu bij klik op overlay of buiten
-    menuOverlay.addEventListener('click', toggleMenu);
-    document.addEventListener('click', function(e) {
-        if(!offScreenMenu.contains(e.target) && e.target !== hamMenu) {
+        // Toggle menu
+        const toggleMenu = () => {
+            hamMenu.classList.toggle("active");
+            offScreenMenu.classList.toggle("active");
+            menuOverlay.classList.toggle("active");
+            
             if(offScreenMenu.classList.contains('active')) {
-                toggleMenu();
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
             }
-        }
-    });
+        };
 
-    // Voorkom sluiten bij klik in menu
-    offScreenMenu.addEventListener('click', function(e) {
-        e.stopPropagation();
+        hamMenu.addEventListener("click", function(e) {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Sluit menu bij klik op overlay of buiten
+        menuOverlay.addEventListener('click', toggleMenu);
+        document.addEventListener('click', function(e) {
+            if(!offScreenMenu.contains(e.target) && e.target !== hamMenu) {
+                if(offScreenMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Voorkom sluiten bij klik in menu
+        offScreenMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
     });
-});
-</script>
+    </script>
 </body>
 </html>

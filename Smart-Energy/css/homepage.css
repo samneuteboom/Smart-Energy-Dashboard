@@ -1,140 +1,189 @@
-body {
-    margin: 0;
-    padding-top: 100px; /* afgestemd op de navbar hoogte */
-    background: #f5f5f5;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #222;
+/* CSS Variabelen */
+:root {
+  --smart-blauw: #0066cc;
+  --energie-groen: #4CAF50;
+  --zon-geel: #FFD700;
+  --donker-blauw: #003366;
 }
 
-/* Achtergrond afbeelding als decoratie */
+/* Algemene stijlen */
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 100px; /* afgestemd op de navbar hoogte */
+  background: #f5f5f5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Achtergrond afbeelding als decoratie & Hero section stijlen */
 .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -1;
+  position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
 }
 
 .background img {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
 }
 
-.background .text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 30px 20px;
-    border-radius: 12px;
+/* Hero content overlay */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 80%;
+  max-width: 800px;
 }
 
-.background .text a {
-    color: #fff;
-    text-decoration: underline;
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* NAVBAR */
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+}
+
+/* Register button stijlen */
+.register-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-btn:hover {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* NAVBAR - Aangepaste versie */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px; /* Hoger vanwege groter logo */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
-    box-sizing: border-box;
-   background: rgba(255,255,255,0.4);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-    border: radius 12px;
-    z-index: 1000;
-    
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  border-radius: 0 0 12px 12px;
+  z-index: 1100;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0,0,0);
 }
 
 /* Linker navigatie */
 .nav-links {
-    flex: 1;
-    display: flex;
-    gap: 32px;
+  flex: 1;
+  display: flex;
+  gap: 32px;
 }
 
 .nav-links a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
+  color: var(--smart-blauw);
+  text-decoration: underline;
 }
 
 /* Midden logo */
 .logo {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
 }
 
 .logo img {
-    height: 100px;
-    width: auto;
-    display: block;
-    transition: height 0.3s ease;
+  height: 100px;
+  width: auto;
+  display: block;
+  transition: height 0.3s ease;
 }
 
 /* Rechter profiel en winkelwagen */
 .profiel {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 24px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
 }
 
 .profiel img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .profiel img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
 /* HAMBURGER MENU */
-/* SMART ENERGIE THEMA HAMBURGER MENU */
-
-
-/* HAMBURGER ICON */
 .ham-menu {
   --ham-size: 44px;
   --ham-line: 3px;
   --ham-color: var(--smart-blauw);
   --ham-active-color: var(--zon-geel);
   --ham-animation: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-  
+
   width: var(--ham-size);
   height: var(--ham-size);
   position: relative;
   cursor: pointer;
   display: none;
-  z-index: 1100;
+  z-index: 1101;
   background: transparent;
   border: none;
   outline: none;
@@ -157,7 +206,7 @@ body {
 .ham-menu span:nth-child(2) { top: 50%; transform: translateY(-50%); }
 .ham-menu span:nth-child(3) { top: 75%; }
 
-/* ACTIVE STATE - Energie-X */
+/* ACTIVE STATE */
 .ham-menu.active span {
   background: var(--zon-geel);
 }
@@ -177,13 +226,13 @@ body {
   transform: translateY(-50%) rotate(-45deg);
 }
 
-/* OFF-SCREEN MENU - Team Energie */
+/* OFF-SCREEN MENU */
 .off-screen-menu {
   --menu-bg: linear-gradient(135deg, var(--donker-blauw), var(--energie-groen));
   --menu-text: white;
   --menu-highlight: var(--zon-geel);
   --menu-width: 500px;
-  
+
   background: var(--menu-bg);
   height: 100vh;
   width: 100%;
@@ -193,16 +242,21 @@ body {
   right: -100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 120px;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 1099;
-  padding: 3rem;
+  padding: 120px 3rem 3rem 3rem;
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .off-screen-menu.active {
   transform: translateX(-100%);
-}/* Team sectie stijl */
+}
+
+/* Team sectie stijl */
 .team-section {
   margin-top: 3rem;
   padding-top: 2rem;
@@ -264,33 +318,8 @@ body {
   transform: translateX(10px);
 }
 
-.off-screen-menu a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.off-screen-menu a:hover::before {
-  opacity: 1;
-  left: 0.5rem;
-}
-
 /* MENU OVERLAY */
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 30, 60, 0.7);
-  backdrop-filter: blur(8px);
-  z-index: 1098;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s ease;
-}
+
 
 .menu-overlay.active {
   opacity: 1;
@@ -302,66 +331,74 @@ body {
   .ham-menu {
     display: block;
   }
-  
+
   .off-screen-menu {
     --menu-width: 100%;
-    padding: 2rem;
+    padding: 120px 2rem 2rem 2rem;
   }
-  
+
   .team-section {
     margin-top: 2rem;
   }
-}
-    .navbar {
-        height: 80px;
-        padding: 0 20px;
-    }
-    
-    .nav-links {
-        display: none;
-    }
-    
-    .ham-menu {
-        display: block;
-    }
-    
-    .logo img {
-        height: 70px;
-    }
-    
-    .off-screen-menu {
-        max-width: 320px;
-        right: -320px;
-    }
-    
-    .off-screen-menu a {
-        font-size: 1.3rem;
-    }
 
+  .navbar {
+    height: 80px;
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .off-screen-menu {
+    max-width: 320px;
+    right: -320px;
+  }
+
+  .off-screen-menu a {
+    font-size: 1.3rem;
+  }
+
+  /* Hero content responsive */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .register-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
 
 @media (max-width: 576px) {
-    .navbar {
-        padding: 0 15px;
-    }
-    
-    .logo img {
-        height: 60px;
-    }
-    
-    .off-screen-menu {
-        max-width: 100%;
-        right: -100%;
-        padding: 1rem;
-    }
-    
-    .off-screen-menu a {
-        font-size: 1.2rem;
-    }
-    
-    h1 {
-        font-size: 2rem;
-        margin-top: 30px;
-    }
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .off-screen-menu {
+    max-width: 100%;
+    right: -100%;
+    padding: 120px 1rem 1rem 1rem;
+  }
+
+  .off-screen-menu a {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
 }
-
-
